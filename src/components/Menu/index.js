@@ -1,22 +1,27 @@
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import styles from "./styles";
+import category from "../../utils/category";
+import { VideosContext } from "../../contexts/VideosContext";
+import { useContext } from "react";
 
 export function Menu(){
+  const { setCategorySelected } = useContext(VideosContext);
+
   return (
     <View style={styles.container}>
       <ScrollView 
         horizontal 
         showsHorizontalScrollIndicator={false}
       >
-        <TouchableOpacity style={[styles.button]}>
-          <Text style={styles.buttonText}>Front End</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#19940F' }]}>
-          <Text style={styles.buttonText}>Programação</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#D82D2D' }]}>
-          <Text style={styles.buttonText}>Mobile</Text>
-        </TouchableOpacity>
+        {category?.map(item => (
+          <TouchableOpacity 
+            key={item.id} 
+            style={[styles.button, { backgroundColor: item.color }]}
+            onPress={() => setCategorySelected(item.name)}  
+          >
+            <Text style={styles.buttonText}>{item.name}</Text>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     </View>
   );

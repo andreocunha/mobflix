@@ -1,19 +1,23 @@
 const data = [
   {
     id: 'LR5LUhTZPCE',
-    color: '#D82D2D'
+    category: 'Mobile',
   },
   {
     id: 'sTnUwOVYZt0',
-    color: '#D82D2D'
+    category: 'Mobile',
   },
   {
     id: 'viRW15_qUZw',
-    color: '#D82D2D'
+    category: 'Mobile',
   },
   {
     id: '30EDNceHcV8',
-    color: '#D82D2D'
+    category: 'Mobile',
+  },
+  {
+    id: '30EDNceHcV8',
+    category: 'Front-end',
   },
 ]
 

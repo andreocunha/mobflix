@@ -1,5 +1,5 @@
 import { StyleSheet, StatusBar } from "react-native";
-import globalColors from "../globalStyles";
+import globalColors from "../../globalStyles";
 
 const styles = StyleSheet.create({
   container: {

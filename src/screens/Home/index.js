@@ -2,16 +2,18 @@ import { View, Text, ScrollView } from "react-native";
 import styles from "./styles";
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts, BebasNeue_400Regular } from '@expo-google-fonts/bebas-neue';
-import { useEffect } from "react";
-import { Menu } from "../components/Menu";
-import { Banner } from "../components/Banner";
-import data from "../utils/data";
-import { CardVideo } from "../components/CardVideo";
-import { AddButton } from "../components/AddButton";
+import { useContext, useEffect } from "react";
+import { Menu } from "../../components/Menu";
+import { Banner } from "../../components/Banner";
+import { CardVideo } from "../../components/CardVideo";
+import { AddButton } from "../../components/AddButton";
+import { VideosContext } from "../../contexts/VideosContext";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Home() {
+export default function Home({ navigation }) {
+  const { filteredVideos } = useContext(VideosContext);
+
   let [fontsLoaded] = useFonts({
     BebasNeue_400Regular,
   });
@@ -32,11 +34,11 @@ export default function Home() {
       <Banner />
       <Menu />
       <ScrollView style={styles.containerVideos}>
-        {data.map((item) => (
-          <CardVideo key={item.id} id={item.id} color={item.color} />
+        {filteredVideos?.map((item) => (
+          <CardVideo key={item.id} data={item} />
         ))}
       </ScrollView>
-      <AddButton />
+      <AddButton navigation={navigation}/>
     </View>
   );
 }
