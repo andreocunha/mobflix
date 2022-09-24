@@ -35,7 +35,11 @@ export default function Home({ navigation }) {
       <Menu />
       <ScrollView style={styles.containerVideos}>
         {filteredVideos?.map((item) => (
-          <CardVideo key={item.id} data={item} />
+          <CardVideo 
+            key={item.id} 
+            data={item} 
+            edit={() => navigation.navigate('Edit', { id: item.id, category: item.category })}
+          />
         ))}
       </ScrollView>
       <AddButton navigation={navigation}/>

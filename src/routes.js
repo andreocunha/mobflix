@@ -6,6 +6,7 @@ const Tab = createNativeStackNavigator();
 
 import Home from './screens/Home';
 import Register from './screens/Register';
+import Edit from './screens/Edit';
 
 export default function Routes() {
   return (
@@ -13,6 +14,7 @@ export default function Routes() {
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
         <Tab.Screen name="Register" component={Register} />
+        <Tab.Screen name="Edit" component={Edit} />
       </Tab.Navigator>
     </NavigationContainer>
   );

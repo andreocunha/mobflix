@@ -9,7 +9,13 @@ const styles = StyleSheet.create({
     marginVertical: 40,
     alignItems: 'flex-start',
   },
-  button: {
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+  },
+  tag: {
     backgroundColor: globalColors.blue,
     paddingVertical: 5,
     paddingHorizontal: 20,
@@ -18,7 +24,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10
   },
-  buttonText: {
+  tagText: {
     color: globalColors.white,
     fontSize: 16,
     fontWeight: 'bold',
