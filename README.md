@@ -20,6 +20,8 @@ O Mobflix é uma aplicação feita em React Native que permite aos usuários cad
 
 Esse projeto é utilizado no challenge de mobile da Alura.
 
+O design do projeto foi baseado nesse [Figma](https://www.figma.com/file/67ypEyQygVXCjxERHaoUu1/Mobflix---Challenge-Mobile?node-id=0%3A1).
+
 
 <h1 align="center">
     <img alt="Demonstracao" title="Demonstracao" src=".images/demo.gif" width="400px" />
