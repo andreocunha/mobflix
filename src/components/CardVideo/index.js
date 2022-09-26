@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image, Linking } from "react-native"
 import styles from "./styles"
 import category from "../../utils/category";
-import Icon from 'react-native-vector-icons/Feather';
 
 export function CardVideo({ data, edit }){
   if (!data) {
