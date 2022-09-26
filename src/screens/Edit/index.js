@@ -64,7 +64,7 @@ export default function Edit({navigation, route}) {
       />
 
       <TouchableOpacity style={styles.button} onPress={handleSave}>
-        <Text style={styles.buttonText}>Salvar</Text>
+        <Text style={styles.buttonText}>Alterar</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={[styles.button, {backgroundColor: 'red'}]} onPress={() => {
