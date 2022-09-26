@@ -9,7 +9,10 @@ export function CardVideo({ data, edit }){
   }
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}
+      onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${data.id}`)}
+      onLongPress={edit}
+    >
       <View style={styles.header}>
         <View style={[styles.tag, { backgroundColor: 
           // get color from category
@@ -17,19 +20,13 @@ export function CardVideo({ data, edit }){
         }]}>
           <Text style={styles.tagText}>{data.category}</Text>
         </View>
-        <TouchableOpacity onPress={edit}>
-        <Icon name="edit" size={20} color="#fff" />
-        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${data.id}`)}
-        style={styles.image}
-      >
+      <View style={styles.image}>
         <Image
           source={{ uri: `https://img.youtube.com/vi/${data.id}/0.jpg` }}
           style={styles.image}
         />
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   )
 }
